@@ -7,6 +7,7 @@ import tc.oc.api.docs.virtual.ServerDoc;
 import tc.oc.api.minecraft.config.MinecraftApiConfiguration;
 import tc.oc.api.minecraft.config.MinecraftApiConfigurationImpl;
 import tc.oc.api.minecraft.connectable.ConnectablesManifest;
+import tc.oc.api.minecraft.listing.ListingManifest;
 import tc.oc.api.minecraft.logging.MinecraftLoggingManifest;
 import tc.oc.api.minecraft.maps.MinecraftMapsManifest;
 import tc.oc.api.minecraft.model.MinecraftModelsManifest;
@@ -46,6 +47,7 @@ public final class MinecraftApiManifest extends HybridManifest {
         install(new MinecraftUsersManifest());
         install(new MinecraftSessionsManifest());
         install(new MinecraftMapsManifest());
+        install(new ListingManifest());
 
         bindAndExpose(ApiConfiguration.class).to(MinecraftApiConfiguration.class);
         bindAndExpose(MinecraftApiConfiguration.class).to(MinecraftApiConfigurationImpl.class);
